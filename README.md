@@ -56,17 +56,7 @@ co.eci.snake
 
 ## Parte I — (Calentamiento) `wait/notify` en un programa multi-hilo
 
-1. Toma el programa [**PrimeFinder**](https://github.com/ARSW-ECI/wait-notify-excercise).
-2. Modifícalo para que **cada _t_ milisegundos**:
-   - Se **pausen** todos los hilos trabajadores.
-   - Se **muestre** cuántos números primos se han encontrado.
-   - El programa **espere ENTER** para **reanudar**.
-3. La sincronización debe usar **`synchronized`**, **`wait()`**, **`notify()` / `notifyAll()`** sobre el **mismo monitor** (sin _busy-waiting_).
-4. Entrega en el reporte de laboratorio **las observaciones y/o comentarios** explicando tu diseño de sincronización (qué lock, qué condición, cómo evitas _lost wakeups_).
-
-> Objetivo didáctico: practicar suspensión/continuación **sin** espera activa y consolidar el modelo de monitores en Java.
-
----
+- [**PrimeFinder**](https://github.com/miguelvanegas-c/PrimeFinder).
 
 ## Parte II — SnakeRace concurrente (núcleo del laboratorio)
 
