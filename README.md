@@ -56,7 +56,7 @@ co.eci.snake
 
 ## Parte I — (Calentamiento) `wait/notify` en un programa multi-hilo
 
-- [**PrimeFinder**](https://github.com/miguelvanegas-c/PrimeFinder).
+- link al repositorio del calentamiento [**PrimeFinder**](https://github.com/miguelvanegas-c/PrimeFinder).
 
 ## Parte II — SnakeRace concurrente (núcleo del laboratorio)
 
