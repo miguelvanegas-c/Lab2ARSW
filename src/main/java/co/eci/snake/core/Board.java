@@ -31,10 +31,10 @@ public final class Board {
   public int width() { return width; }
   public int height() { return height; }
 
-  public synchronized Set<Position> mice() { return new HashSet<>(mice); }
-  public synchronized Set<Position> obstacles() { return new HashSet<>(obstacles); }
-  public synchronized Set<Position> turbo() { return new HashSet<>(turbo); }
-  public synchronized Map<Position, Position> teleports() { return new HashMap<>(teleports); }
+  public Set<Position> mice() { return new HashSet<>(mice); }
+  public Set<Position> obstacles() { return new HashSet<>(obstacles); }
+  public Set<Position> turbo() { return new HashSet<>(turbo); }
+  public Map<Position, Position> teleports() { return new HashMap<>(teleports); }
 
   public synchronized MoveResult step(Snake snake) {
     Objects.requireNonNull(snake, "snake");

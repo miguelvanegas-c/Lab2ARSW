@@ -10,9 +10,11 @@ import co.eci.snake.core.engine.GameClock;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 public final class SnakeApp extends JFrame {
 
@@ -20,7 +22,7 @@ public final class SnakeApp extends JFrame {
   private final GamePanel gamePanel;
   private final JButton actionButton;
   private final GameClock clock;
-  private final java.util.List<Snake> snakes = new java.util.ArrayList<>();
+  private final List<Snake> snakes = new java.util.ArrayList<>();
 
   public SnakeApp() {
     super("The Snake Race");
@@ -128,10 +130,22 @@ public final class SnakeApp extends JFrame {
     clock.start();
   }
 
-  private void togglePause() {
+  private void togglePause()  {
     if ("Action".equals(actionButton.getText())) {
       actionButton.setText("Resume");
       clock.pause();
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        List<Integer> nums = snakes.stream()
+              .map(s-> s.length())
+              .collect(Collectors.toList());
+      Integer numMax = Collections.max(nums);
+      Integer numMin = Collections.min(nums);
+      System.out.println(numMax);
+      System.out.println(numMin);
     } else {
       actionButton.setText("Action");
       clock.resume();
